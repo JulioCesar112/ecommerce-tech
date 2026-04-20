@@ -1,16 +1,17 @@
 import { useForm } from "react-hook-form"
 import { useAuth } from "../hooks/useAuth"
+import { getToken } from "../../../services/storage"
 
 
 const LoginForm = () => {
 
   const { register, handleSubmit } = useForm()
-  const { login, loading } = useAuth()
+  const { useLogin, loading } = useAuth()
 
   const onSubmit = async (data) => {
     try {
-      const res = await login(data)
-      console.log("Users Loged",res)
+      const res = await useLogin(data)
+      console.log("Users Loged",data)
     } catch (error) {
       console.error("Error in loginform")
     }
@@ -28,8 +29,8 @@ const LoginForm = () => {
         {...register("password", { required: true })}
       />
 
-      <button type="submit" disabled={ loading }>
-        { loading ? "Cargando..." : "Login"}
+      <button type="submit" disabled={loading}>
+        {loading ? "Cargando..." : "Login"}
       </button>
     </form>
   )

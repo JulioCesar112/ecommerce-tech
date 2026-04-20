@@ -1,11 +1,18 @@
-export const saveToken = (token) => {
-    localStorage.setItem("token", token)
+export const saveAuth = (data) => {
+    localStorage.setItem("token", data.token)
+    localStorage.setItem("user", JSON.stringify(data.users))
 }
 
 export const getToken = () => {
     return localStorage.getItem("token")
 }
 
-export const deleteToken = () => {
-    return localStorage.removeItem("token")
+export const getUser = () => {
+    const user = localStorage.getItem("user")
+    return user ? JSON.parse(user) : null
+}
+
+export const logout = () => {
+    localStorage.removeItem("token")
+    localStorage.removeItem("user")
 }

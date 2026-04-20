@@ -1,18 +1,20 @@
-import { loginUser } from "../services/authService";
-import { saveToken } from "../../../services/storage";
+import { loginUser, registerUser } from "../services/authService";
+import { saveAuth } from "../../../services/storage";
 import { useState } from "react";
+
 
 export const useAuth = () => {
   const [loading, setLoading] = useState(false);
 
-  const login = async (formData) => {
+  /*auth de Login*/
+  const useLogin = async (formData) => {
     try {
       setLoading(true);
 
       const data = await loginUser(formData);
 
       // guardar token
-      saveToken(data.token);
+      saveAuth(data);
 
       return data;
     } catch (error) {
@@ -23,8 +25,24 @@ export const useAuth = () => {
     }
   };
 
+  /*auth de register*/
+  const useRegister = async (formData) =>{
+    try {
+      setLoading(true)
+
+      const data = registerUser(formData)
+      return data 
+    } catch (error) {
+      console.error(error)
+      throw error
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return {
-    login,
-    loading
+    useLogin,
+    loading,
+    useRegister
   };
 };

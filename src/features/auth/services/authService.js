@@ -8,11 +8,11 @@ export const loginUser = async (data) => {
     console.error("Error in authService login", error)
     throw error
   }
-} 
+}
 
-export const registerUser = async (data) =>{
+export const registerUser = async (data) => {
   try {
-    const response = await axiosClient.post("/auth/register")
+    const response = await axiosClient.post("/auth/register", data)
     return response.data
   } catch (error) {
     console.error("Error in authSerice Register", error)
