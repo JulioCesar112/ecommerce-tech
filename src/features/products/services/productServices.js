@@ -11,3 +11,14 @@ export const getProducts = async () => {
         throw error
     }
 }
+
+export const createProduct = async (data) => {
+    try {
+        const response  = await axiosClient.post("/products", data)
+        return response.data
+    } catch (error) {
+        console.error("Error in createProduct", error)
+        throw error 
+    }
+}
+

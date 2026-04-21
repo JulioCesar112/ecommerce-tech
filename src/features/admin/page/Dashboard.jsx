@@ -1,8 +1,12 @@
+import ProductForm from "../../products/components/ProductForm"
+
+
+
 const Dashboard = () => {
-    return(
+    return (
         <div>
             <h1>Panel Admin</h1>
-            <p>solo admins pueden estar aqui</p>
+            <ProductForm />
         </div>
     )
 }

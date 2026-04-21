@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../services/productServices";
+import { createProduct, getProducts } from "../services/productServices";
 
 export const useProducts = () => {
   const [products, setProducts] = useState([])
@@ -19,8 +19,19 @@ export const useProducts = () => {
 
   useEffect(() => {
     fetchProducts()
-  },[])
+  }, [])
 
-  return {products, loading}
-  
+  const create = async (formData) => {
+    try {
+      const data = await createProduct(formData)
+      return data
+    } catch (error) {
+      console.error("Error in useProducts create", error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return { products, loading, create, fetchProducts }
+
 }
