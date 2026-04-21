@@ -1,12 +1,10 @@
 import { useForm } from "react-hook-form"
-import { useProducts } from "../hooks/useProducts"
 
 
 
 
-const ProductForm = () => {
+const ProductForm = ({ create, loading }) => {
   const { register, handleSubmit } = useForm()
-  const { create, loading } = useProducts()
 
   const onSubmit = async (data) => {
     try {

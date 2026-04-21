@@ -32,6 +32,6 @@ export const useProducts = () => {
     }
   }
 
-  return { products, loading, create, fetchProducts }
+  return { products, loading, create }
 
 }
