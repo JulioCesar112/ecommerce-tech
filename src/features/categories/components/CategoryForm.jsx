@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useCategories } from "../hooks/useCategories"
 
-
-
-const CategoryForm = ({createCategory}) => {
+const CategoryForm = ({ createCategory }) => {
   const { register, handleSubmit } = useForm()
 
   const onSubmit = async (data) => {

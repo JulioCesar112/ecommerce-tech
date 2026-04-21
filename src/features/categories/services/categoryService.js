@@ -1,6 +1,5 @@
 import axiosClient from "../../../services/axiosClient"
 
-
 export const getCategories =async() =>{
   try {
     const response = await axiosClient.get("/categories")
