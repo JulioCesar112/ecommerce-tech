@@ -11,7 +11,6 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <h1>Productos</h1>
       <ProductList products={products} />
     </div>
   );

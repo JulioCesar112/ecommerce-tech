@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
+import "./Login.css";
 
 const Login = () => {
   return (
-    <div>
-      <h1>Login</h1>
-      <Link to="/">Home</Link>
-      <LoginForm />
-    </div>
-  )
-}
+    <div className="login-page">
+      <div className="login-container">
+        <h1 className="login-title">Login</h1>
 
-export default Login
+        <LoginForm />
+
+        <Link to="/" className="login-home-link">
+          Go to Home
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

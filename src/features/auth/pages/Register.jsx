@@ -1,14 +1,21 @@
-import { Link } from "react-router-dom"
-import RegisterForm from "../components/RegisterForm"
+import { Link } from "react-router-dom";
+import RegisterForm from "../components/RegisterForm";
+import "./Register.css";
 
 const Register = () => {
-    return(
-        <div>
-            <h1>Register</h1>
-            <Link to="/">Home</Link>
-            <RegisterForm/>
-        </div>
-    )
-}
+  return (
+    <div className="register-page">
+      <div className="register-container">
+        <h1 className="register-title">Register</h1>
 
-export default Register
+        <RegisterForm />
+
+        <Link to="/" className="register-home-link">
+          Go to Home
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Register;

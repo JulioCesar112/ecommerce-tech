@@ -1,0 +1,94 @@
+/* 🌍 Fondo */
+.register-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #93a5cf, #e4efe9);
+}
+
+/* 📦 Card */
+.register-container {
+  width: 380px;
+  padding: 40px;
+
+  background: #ffffff;
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 📝 Título */
+.register-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+/* 📋 Form */
+.register-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ✏️ Inputs */
+.register-input {
+  height: 45px;
+  padding: 0 15px;
+
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+
+  background-color: #f3f4f6;
+
+  transition: all 0.2s ease;
+}
+
+/* 🔥 Focus */
+.register-input:focus {
+  outline: none;
+  border: 2px solid #3b82f6;
+  background-color: #ffffff;
+}
+
+/* 🚀 Botón */
+.register-button {
+  height: 45px;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: #22c55e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* 🔥 Hover */
+.register-button:hover {
+  background-color: #16a34a;
+  transform: scale(1.02);
+}
+
+/* 🔗 Link */
+.register-home-link {
+  font-size: 14px;
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.register-home-link:hover {
+  text-decoration: underline;
+}

@@ -1,17 +1,14 @@
-import ProductCard from "./ProductCard";
-
+import ProductCard from "./ProductCard"
+import "./Product.css"
 
 const ProductList = ({ products }) => {
   return (
-    <div>
-      {
-        products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))
-      }
+    <div className="product-grid">
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
     </div>
   )
-
 }
 
 export default ProductList

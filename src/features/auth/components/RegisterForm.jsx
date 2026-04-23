@@ -1,41 +1,44 @@
-import { useForm } from "react-hook-form"
-import { useAuth } from "../hooks/useAuth"
-import { useState } from "react"
+import { useForm } from "react-hook-form";
+import { useAuth } from "../hooks/useAuth";
 
 const RegisterForm = () => {
-  const { register, handleSubmit } = useForm()
-  const { useRegister, loading } = useAuth()
+  const { register, handleSubmit } = useForm();
+  const { useRegister, loading } = useAuth();
 
   const onSubmit = async (data) => {
     try {
-      const res = await useRegister(data)
-      console.log("User Register", res)
+      await useRegister(data);
     } catch (error) {
-      console.log("Error in RegisterForm")
-      alert(error.response.data.message)
+      alert(error.response?.data?.message || "Error");
     }
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-
-      <input placeholder="name"
+    <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+      <input
+        className="register-input"
+        placeholder="Name"
         {...register("name", { required: true })}
       />
-      <input placeholder="email"
+
+      <input
+        className="register-input"
+        placeholder="Email"
         {...register("email", { required: true })}
       />
 
-      <input type="password"
-        placeholder="password"
+      <input
+        className="register-input"
+        type="password"
+        placeholder="Password"
         {...register("password", { required: true })}
       />
 
-      <button type="submit" disabled={loading}>
-        {loading ? "creando..." : "Register"}
+      <button className="register-button" type="submit" disabled={loading}>
+        {loading ? "Creating..." : "Register"}
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;

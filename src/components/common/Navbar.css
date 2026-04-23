@@ -1,27 +1,66 @@
-.navbar-home{
-height: 60px;
+/* 🔷 NAVBAR */
+.navbar-home {
+  height: 70px;
   display: flex;
-  margin: 20px;
-  border-radius: 10px ;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+
+  margin: 20px;
+  padding: 0 30px;
+
+  border-radius: 15px;
+  background-color: #ffffff;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  font-size: 15px;
 }
 
-.navbar-logo{
+/* 🔷 LOGO */
+.navbar-logo {
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.navbar-links{
+.navbar-logo a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2937;
+  text-decoration: none;
+}
+
+/* 🔷 LINKS */
+.navbar-links {
   width: 50%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
+  gap: 30px;
 }
 
-.navbar-cart{
+/* 🔗 LINKS estilo */
+.navbar-links a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* 🔥 HOVER */
+.navbar-links a:hover {
+  color: #3b82f6;
+}
+
+/* 🛒 CART */
+.navbar-cart {
+  font-size: 28px;
   display: flex;
-  font-size: 35px;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar-cart:hover {
+  transform: scale(1.15);
 }
