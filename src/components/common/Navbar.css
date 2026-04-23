@@ -1,0 +1,27 @@
+.navbar-home{
+height: 60px;
+  display: flex;
+  margin: 20px;
+  border-radius: 10px ;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.navbar-logo{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-links{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar-cart{
+  display: flex;
+  font-size: 35px;
+}

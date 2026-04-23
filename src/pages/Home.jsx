@@ -1,6 +1,7 @@
 
 import { useProducts } from "../features/products/hooks/useProducts";
 import ProductList from "../features/products/components/ProductList";
+import Navbar from "../components/common/Navbar";
 
 const Home = () => {
   const { products, loading } = useProducts();
@@ -9,6 +10,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbar />
       <h1>Productos</h1>
       <ProductList products={products} />
     </div>
